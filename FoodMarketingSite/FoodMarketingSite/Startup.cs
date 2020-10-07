@@ -23,6 +23,9 @@ namespace FoodMarketingSite
             //session için eklendi
             services.AddSession();
 
+            //Identity kullanımı için eklenmeli
+           // services.AddIdentity().AddEntityFrameworkStores();
+
            services.AddMvc();
            services.AddMvc(options => options.EnableEndpointRouting = false);
 
