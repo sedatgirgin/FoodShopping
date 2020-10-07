@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FoodMarketingSite.Data.Models;
+using FoodMarketingSite.Data.Models.User;
 using FoodMarketingSite.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FoodMarketingSite
@@ -21,8 +23,17 @@ namespace FoodMarketingSite
             //Identity kullanımı için eklenmeli
             services.AddDbContext<Context>();
             //userManager => aspnetUsers | roleManager => aspnetrole | signManager
-            services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<Context>();
+            //burda şifre ye bazı opsionlar verebiliriz
+            services.AddIdentity<AppUser,IdentityRole>(opt=>
+                {
+                    opt.Password.RequireDigit = false;//sayı olmasın
+                    opt.Password.RequireLowercase = false;//küçük harf zorunlulu kapalı
+                    opt.Password.RequiredLength = 1;//1 uzunlulu olsun
+                    opt.Password.RequireUppercase = false; //Büyük fark zorunlugunu kaldır
+                    opt.Password.RequireNonAlphanumeric = false; //alphanumerik karekterleri  kaldır
+               }).AddEntityFrameworkStores<Context>();
             //Identity kullanımı için eklenmeli
+
 
 
 
@@ -36,15 +47,19 @@ namespace FoodMarketingSite
             //session için eklendi
             services.AddSession();
 
-         
 
-           services.AddMvc();
-           services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddControllersWithViews();
+          // services.AddMvc();
+           //services.AddMvc(options => options.EnableEndpointRouting = false);
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, 
+            IHostingEnvironment env,
+            UserManager<AppUser> userManager,
+            RoleManager<IdentityRole> roleManager
+            )
         {
             //uygulama development modda ise;
             //launchSettings.json dosyasından anlıyor dev olup olmadığını
@@ -56,24 +71,32 @@ namespace FoodMarketingSite
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+
+            //eklemiş olduğum admin rolündeki kulanıcıyı oluşturuyorum.
+            // bir defa oluşturacak daha sonra tekrar oluşturmayacak çünkü artık null degil
+            IdentityInitializer.CreateAdmin(userManager,roleManager);
+
+            app.UseRouting();
             app.UseStaticFiles();
 
             //session için eklendi
             app.UseSession();
 
-            app.UseMvc(rauters =>
+            //app.UseMvc(rauters =>
+            //{
+            //    rauters.MapRoute(
+            //          name: "default", template: "{controller=Home}/{action=Index}/{id?}");
+            //});
+
+            app.UseEndpoints(endpoint =>
             {
-                rauters.MapRoute(
-                      name: "default", template: "{controller=Home}/{action=Index}/{id?}");
+                endpoint.MapControllerRoute(
+                    name: "default",
+                    pattern: "{ Controller = Home}/{ Action = Index}/{ id ?}"
+                    );
             });
 
-            //app.UseEndpoints(endpoint =>
-            //{
-            //    endpoint.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{ Controller = Home}/{ Action = Index}/{ id ?}"
-            //        );
-            //});
             //sadece int girebilir
             //app.UseMvc(rauters =>
             //{
