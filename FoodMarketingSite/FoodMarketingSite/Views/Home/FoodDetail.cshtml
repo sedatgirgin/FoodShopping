@@ -1,0 +1,35 @@
+﻿@model Food
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <img src="" class="w-100 img-thumbnail img-fluid"
+                 alt="@Model.Name" />
+        </div>
+        @ViewBag.Cook
+        @ViewBag.Ses
+        <div class="col-md-9">
+            <div class="card">
+                <h5 class="card-header">
+                    @Model.Name
+                </h5>
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Description</h5>
+                    <p class="card-text">
+
+                        <strong>Category :</strong>
+                        @*Kendi eklemiş olduğum TagHelper sınıfımı çagırdım*@
+                        <TagCategoryName food-id="@Model.Id"></TagCategoryName>
+                        <br />
+                        @Model.Price
+                    </p>
+                    <a href="#" class="btn btn-danger float-right ml-1">
+                        add to Basket
+                    </a>
+                    <a asp-action="Index" asp-controller="Home"
+                       class="btn btn-warning float-right">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿@model List<Food>
+
+    <div class="row">
+
+        @foreach (var x in Model)
+        {
+            <div class="col-md-3 ">
+                <div class="card m-1">
+                    <img class="card-img-top" src="" alt="Resim Bulunmuyor">
+                    <div class="card-body">
+                        <h5 class="card-title">@x.Name </h5>
+                        <p class="card-text">@x.Price</p>
+                        @*home contoller altındaki FoodDetail e gider Id bilgisini*@
+                        <a asp-action="FoodDetail"
+                         asp-controller="Home"
+                           asp-route-id="@x.Id"
+                           class="btn btn-primary float-right">Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+     </div>

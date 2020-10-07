@@ -1,0 +1,14 @@
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp2.1\FoodMarketingSite.deps.json
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp2.1\FoodMarketingSite.runtimeconfig.json
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp2.1\FoodMarketingSite.runtimeconfig.dev.json
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp2.1\FoodMarketingSite.dll
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp2.1\FoodMarketingSite.csprojAssemblyReference.cache
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp2.1\FoodMarketingSite.csproj.CoreCompileInputs.cache
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp2.1\FoodMarketingSite.RazorAssemblyInfo.cache
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp2.1\FoodMarketingSite.RazorAssemblyInfo.cs
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp2.1\FoodMarketingSite.AssemblyInfoInputs.cache
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp2.1\FoodMarketingSite.AssemblyInfo.cs
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp2.1\FoodMarketingSite.RazorTargetAssemblyInfo.cache
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp2.1\FoodMarketingSite.pdb
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp2.1\FoodMarketingSite.dll
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp2.1\FoodMarketingSite.pdb

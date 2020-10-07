@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Home";
+    //Layout = "~/Views/Share/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        @await Component.InvokeAsync("CategoryComponent")
+
+    </div>
+    <div class="col-md-9">
+        @await Component.InvokeAsync("FoodComponent")
+    </div>
+</div>
+  
+
+
