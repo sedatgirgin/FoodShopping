@@ -48,9 +48,12 @@ namespace FoodMarketingSite
             services.AddSession();
 
 
-           // services.AddControllersWithViews();
+           
+            services.AddControllersWithViews();
             services.AddMvc();
-            services.AddMvc(options => options.EnableEndpointRouting = false);
+
+            //app.UseMvc ile URL verecek isem bunu aktive ediyorum
+            //services.AddMvc(options => options.EnableEndpointRouting = false);
 
         }
 
@@ -77,25 +80,37 @@ namespace FoodMarketingSite
             // bir defa oluşturacak daha sonra tekrar oluşturmayacak çünkü artık null degil
             IdentityInitializer.CreateAdmin(userManager,roleManager);
 
-            //app.UseRouting();
+            //ekli bütün dosyaları tarayıcıdan görmemizi sağlar
             app.UseStaticFiles();
 
             //session için eklendi
             app.UseSession();
 
-            app.UseMvc(rauters =>
+
+            app.UseRouting();
+            app.UseEndpoints(endpoint =>
             {
-                rauters.MapRoute(
-                      name: "default", template: "{controller=Home}/{action=Index}/{id?}");
+                //https://localhost:44391/
+                endpoint.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                    );
+
+                //https://localhost:44391/admin
+                endpoint.MapControllerRoute(
+                 name: "areas",
+                 pattern: "{area}/{controller=Home}/{action=Index}/{id?}"
+                 );
             });
 
-            //app.UseEndpoints(endpoint =>
+
+
+            //app.UseMvc(rauters =>
             //{
-            //    endpoint.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{ Controller = Home}/{ Action = Index}/{ id ?}"
-            //        );
+            //    rauters.MapRoute(
+            //          name: "default", template: "{controller=Home}/{action=Index}/{id?}");
             //});
+
 
             //sadece int girebilir
             //app.UseMvc(rauters =>

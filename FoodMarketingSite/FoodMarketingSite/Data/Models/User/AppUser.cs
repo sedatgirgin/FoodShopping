@@ -10,8 +10,5 @@ namespace FoodMarketingSite.Data.Models.User
     {
         public string Name { get; set; }
         public string SurName { get; set; }
-        public string UserName { get; set; }
-
-
     }
 }

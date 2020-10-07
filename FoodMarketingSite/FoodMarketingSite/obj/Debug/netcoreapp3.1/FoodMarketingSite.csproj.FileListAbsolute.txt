@@ -144,7 +144,6 @@ C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreap
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Views\Share\_Layout.cshtml.g.cs
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CategoryComponent\Default.cshtml.g.cs
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\FoodComponent\Default.cshtml.g.cs
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Views\Home\FoodDetail.cshtml.g.cs
@@ -155,3 +154,5 @@ C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreap
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\FoodMarketingSite.csproj.CoreCompileInputs.cache
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\FoodMarketingSite.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Views\Share\_Layout.cshtml.g.cs
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
