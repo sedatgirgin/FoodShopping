@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FoodMarketingSite.Data.Models;
 using FoodMarketingSite.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FoodMarketingSite
@@ -16,15 +18,25 @@ namespace FoodMarketingSite
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //Identity kullanımı için eklenmeli
+            services.AddDbContext<Context>();
+            //userManager => aspnetUsers | roleManager => aspnetrole | signManager
+            services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<Context>();
+            //Identity kullanımı için eklenmeli
+
+
+
+           //Scope ile her request de baştan data cekmiyorum interface i gören obje doluyor
            services.AddScoped<ICategoryRepository, CategoryRepository>();
            services.AddScoped<IFoodRepository, FoodRepository>();
            services.AddScoped<ICategoryFoodRepository, CategoryFoodRepository>();
 
+
+
             //session için eklendi
             services.AddSession();
 
-            //Identity kullanımı için eklenmeli
-           // services.AddIdentity().AddEntityFrameworkStores();
+         
 
            services.AddMvc();
            services.AddMvc(options => options.EnableEndpointRouting = false);
