@@ -24,7 +24,7 @@ namespace FoodMarketingSite
             services.AddDbContext<Context>();
             //userManager => aspnetUsers | roleManager => aspnetrole | signManager
             //burda şifre ye bazı opsionlar verebiliriz
-            services.AddIdentity<AppUser,IdentityRole>(opt=>
+            services.AddIdentity<IdentityUser,IdentityRole>(opt=>
                 {
                     opt.Password.RequireDigit = false;//sayı olmasın
                     opt.Password.RequireLowercase = false;//küçük harf zorunlulu kapalı
@@ -48,16 +48,16 @@ namespace FoodMarketingSite
             services.AddSession();
 
 
-            services.AddControllersWithViews();
-          // services.AddMvc();
-           //services.AddMvc(options => options.EnableEndpointRouting = false);
+           // services.AddControllersWithViews();
+            services.AddMvc();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, 
             IHostingEnvironment env,
-            UserManager<AppUser> userManager,
+            UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager
             )
         {
@@ -77,25 +77,25 @@ namespace FoodMarketingSite
             // bir defa oluşturacak daha sonra tekrar oluşturmayacak çünkü artık null degil
             IdentityInitializer.CreateAdmin(userManager,roleManager);
 
-            app.UseRouting();
+            //app.UseRouting();
             app.UseStaticFiles();
 
             //session için eklendi
             app.UseSession();
 
-            //app.UseMvc(rauters =>
-            //{
-            //    rauters.MapRoute(
-            //          name: "default", template: "{controller=Home}/{action=Index}/{id?}");
-            //});
-
-            app.UseEndpoints(endpoint =>
+            app.UseMvc(rauters =>
             {
-                endpoint.MapControllerRoute(
-                    name: "default",
-                    pattern: "{ Controller = Home}/{ Action = Index}/{ id ?}"
-                    );
+                rauters.MapRoute(
+                      name: "default", template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            //app.UseEndpoints(endpoint =>
+            //{
+            //    endpoint.MapControllerRoute(
+            //        name: "default",
+            //        pattern: "{ Controller = Home}/{ Action = Index}/{ id ?}"
+            //        );
+            //});
 
             //sadece int girebilir
             //app.UseMvc(rauters =>

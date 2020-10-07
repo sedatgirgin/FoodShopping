@@ -8,15 +8,15 @@ namespace FoodMarketingSite.Data.Models.User
 {
     public class IdentityInitializer
     {
-        public static void CreateAdmin(UserManager<AppUser> userManager,
+        public static void CreateAdmin(UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager)
         {
             //sedat adında kullanıcı var mı? 
             //burda "Async" olmasa "Result" ile işlem bitene kadar arkada başka tired çalıştımaz.
-            AppUser appUser = new AppUser
+            IdentityUser appUser = new IdentityUser
             {
-                Name = "Sedat",
-                SurName = "Girgin",
+                PhoneNumber = "05555555555",
+                Email = "sedatgirgin@gmail.com",
                 UserName = "Yoruk"
             };
             if (userManager.FindByNameAsync("Yoruk").Result == null)
