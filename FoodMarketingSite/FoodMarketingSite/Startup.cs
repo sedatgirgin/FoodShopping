@@ -22,8 +22,14 @@ namespace FoodMarketingSite
         {
             //Identity kullanımı için eklenmeli
             services.AddDbContext<Context>();
+
+
+            //Authorize işemini kontrol edilebilmesi için UseAuthentication ve UseAuthorization için
+            services.AddAuthentication();
+
+
             //userManager => aspnetUsers | roleManager => aspnetrole | signManager
-            //burda şifre ye bazı opsionlar verebiliriz
+            //ŞİFRE nin özelliklerini belirleyebiliyoruz
             services.AddIdentity<IdentityUser,IdentityRole>(opt=>
                 {
                     opt.Password.RequireDigit = false;//sayı olmasın
@@ -35,6 +41,17 @@ namespace FoodMarketingSite
             //Identity kullanımı için eklenmeli
 
 
+            //Cookie bilgilerini ayarlama Identity - entityFramework 
+            services.ConfigureApplicationCookie(opt =>
+            {
+                //cookie için bir adres vermez isek eğer cok farklı bir adrese bakıyor
+                opt.LoginPath = new PathString("/Home/Login");
+                opt.Cookie.Name = "SedatCookie";//cookie name degiştirilebilir
+                opt.Cookie.HttpOnly = true;//javascript tarafından bu cookie çekilebilir olsun mu? HAYIR
+                opt.Cookie.SameSite = SameSiteMode.Strict;// Dış kaynaklarda yani başka siteler kullanabilsin mi? sadece ben(Strict),  herkes kullanabilir(LAX).
+                opt.ExpireTimeSpan = TimeSpan.FromMinutes(30);// Bu cookie ne kadar süre kullanıcın bilgisayarından tutulsun? 30 dakika tutulsun
+            });
+
 
 
            //Scope ile her request de baştan data cekmiyorum interface i gören obje doluyor
@@ -44,7 +61,7 @@ namespace FoodMarketingSite
 
 
 
-            //session için eklendi
+            //session kullanımını aktif etmek için 
             services.AddSession();
 
 
@@ -86,8 +103,19 @@ namespace FoodMarketingSite
             //session için eklendi
             app.UseSession();
 
-
             app.UseRouting();
+
+
+            //Authorize için;
+            //UseAuthentication ilgili kullanıcı giriş yapmış mı? yapmamış mı?
+            //UseAuthorization giriş yapan kullanıcının rolu bahsi gecen durumları karşılıyor mu?
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+
+
+
+
             app.UseEndpoints(endpoint =>
             {
                 //https://localhost:44391/
@@ -102,6 +130,9 @@ namespace FoodMarketingSite
                  pattern: "{area}/{controller=Home}/{action=Index}/{id?}"
                  );
             });
+
+
+
 
 
 
