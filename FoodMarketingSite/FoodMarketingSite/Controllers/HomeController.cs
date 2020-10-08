@@ -57,6 +57,10 @@ namespace FoodMarketingSite.Controllers
             //sağlıyor ise giriş yapsın
             //!LİNK BAK: https://docs.microsoft.com/tr-tr/aspnet/mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-validation-to-the-model
             //get - post  - ModelState.IsValid durumunu açıklıyor
+
+
+            //!!!!!!!!!!!!!!!!!!!Bu dogrulama işlemleri server- site olarak kontol edilir.!!!!!!!!!! 
+            //Bunu Client site yapabiliriz bunun için jquery-validation-unobtrusiv ve jquery-validate ve jquery kütüphanlerini ekledim. bunları kullanmam yeterli
             if (ModelState.IsValid)
             {
 

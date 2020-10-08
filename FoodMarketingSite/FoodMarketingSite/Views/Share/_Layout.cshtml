@@ -29,11 +29,19 @@
     </nav>
     @*Navbar*@
 
-<div class="mt-2">
-    <div class="container-fluid">
-        @RenderBody()
+    <div class="mt-2">
+        <div class="container-fluid">
+            @RenderBody()
+        </div>
     </div>
-</div>
+
+    @* RenderSection false ben bunu her yerde kullanmayacağım. true her yerde kullanacağım*@
+    @*jquery-validate | jquery-validation-unobtrusive | jquery kütüphnaleri ile Validation ve Required kontrolleri Client side yapmak için;*@
+    <script src="~/jquery/jquery.min.js"></script>
+    @*SedatJavaScript diye bir section görürsen bunu buraya yaz.*@
+    @*Login.cshtml de SedatJavaScript sectionunu çagırdım*@
+    @RenderSection("SedatJavaScript", false)
+
 </body>
 </html>
 
