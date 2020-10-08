@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoodMarketingSite.Areas.Admin.Controllers
 {
     //Admin area geçmez isem eğer 2 tane HomeController olduğu için hangisini çalıştıracağını anlayamaz
-    [Area("admin")]
+    [Area("Admin")]
     //Authorize sayesinde sadece giriş yapmış kullanıcılar erişebilir
     [Authorize]
     public class HomeController : Controller

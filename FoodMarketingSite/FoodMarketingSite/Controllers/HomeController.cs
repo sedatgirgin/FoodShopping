@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using FoodMarketingSite.Data.Models.Login;
 using FoodMarketingSite.Repositories;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FoodMarketingSite.Controllers
@@ -17,10 +18,13 @@ namespace FoodMarketingSite.Controllers
     //[Route("sedat/[action]")]
     public class HomeController : Controller
     {
+        private readonly SignInManager<IdentityUser> _signInManager;
+
         private readonly IFoodRepository _foodRepository;
 
-        public HomeController(IFoodRepository foodRepository)
+        public HomeController(IFoodRepository foodRepository, SignInManager<IdentityUser> signInManager)
         {
+            _signInManager = signInManager;
             _foodRepository = foodRepository;
         }
 
@@ -63,7 +67,20 @@ namespace FoodMarketingSite.Controllers
             //Bunu Client site yapabiliriz bunun için jquery-validation-unobtrusiv ve jquery-validate ve jquery kütüphanlerini ekledim. bunları kullanmam yeterli
             if (ModelState.IsValid)
             {
+                // PasswordSignInAsync(userLoginModel.UserName,userLoginModel.Password,userLoginModel.RememberMe,false)   =>  lockoutOnFailure false ise şifreyi yanlış da girseniz sizi kitlemez.
+                // PasswordSignInAsync(userLoginModel.UserName,userLoginModel.Password,userLoginModel.RememberMe,true)   =>  lockoutOnFailure true ise sizi şifre yanlış ise 5 dakika kitler.
 
+             var signInResult = _signInManager.PasswordSignInAsync(userLoginModel.UserName, userLoginModel.Password, userLoginModel.RememberMe, true);
+
+                //if(signInResult.Result.IsLockedOut) // ilgili kullanıcı kilitlimi değil mi?
+                // if(signInResult.Result.IsNotAllowed) // imail - şifre - tel onayı onaylama gibi bir şart varsa buraya düşer?
+                //if (signInResult.Result.RequiresTwoFactor)//telefona yada maile gelen mesaj ile giriş
+                if (signInResult.Result.Succeeded)//başarılı ise
+                {
+                    return RedirectToAction("Index", "Home", new { area = "Admin" });
+                }
+                //    <div asp-validation-summary="ModelOnly" class="text-danger"></div> tag inde hata mesajını yazar
+                ModelState.AddModelError("", "UserName or Password Fail");
             }
             return View(userLoginModel);
         }
