@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FoodMarketingSite.Data.Models.Login;
 using FoodMarketingSite.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -37,6 +38,34 @@ namespace FoodMarketingSite.Controllers
 
             return View(_foodRepository.TGet(id));
         }
+
+        //cooklie nin gösterdigi login sayfası
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View(new UserLoginModel());
+        }
+
+        //login sayfsından alınan username -password bilgisi gelir
+        //login.cshtml sayfadında asp-for sayesinde UserLoginModel map lendi
+        [HttpPost]
+        public IActionResult Login(UserLoginModel userLoginModel)
+        {
+            //UserLoginModel - içinde tanımladığımız [Required] ların sağlanıp sağlanmadığını
+            //ModelState.IsValid ile kontrol edebiliriz
+            //sağlamıyor ise aynı sayfaya gitsin
+            //sağlıyor ise giriş yapsın
+            //!LİNK BAK: https://docs.microsoft.com/tr-tr/aspnet/mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-validation-to-the-model
+            //get - post  - ModelState.IsValid durumunu açıklıyor
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View(userLoginModel);
+        }
+
+
+
         //önemli methodlar
         //document.cookie diyerek tarayıcıda görebiliriz
         public void SetCookie(string key,string value)
@@ -61,6 +90,8 @@ namespace FoodMarketingSite.Controllers
 
             return value;
         }
+
+
 
     }
 }

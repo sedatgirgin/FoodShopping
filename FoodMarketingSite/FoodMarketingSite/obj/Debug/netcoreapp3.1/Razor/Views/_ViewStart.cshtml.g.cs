@@ -19,8 +19,15 @@ using FoodMarketingSite.Data.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\Views\_ViewImports.cshtml"
+using FoodMarketingSite.Data.Models.Login;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"36e2a83a4969b909056b0c092d5a8d4bc72033ff", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"935ef19134caf1ce60f3ae5db7dbcbe2c5786500", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bd50015653188ea6549700783fcfa624ad95ab72", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

@@ -19,8 +19,15 @@ using FoodMarketingSite.Data.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\Views\_ViewImports.cshtml"
+using FoodMarketingSite.Data.Models.Login;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"63c5a102fe156788b1894741a9bcc143c35725bd", @"/Views/Home/FoodDetail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"935ef19134caf1ce60f3ae5db7dbcbe2c5786500", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bd50015653188ea6549700783fcfa624ad95ab72", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_FoodDetail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Food>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -98,7 +105,7 @@ WriteAttributeValue("", 180, Model.Name, 180, 11, false);
 #nullable disable
             WriteLiteral("</h5>\r\n                    <p class=\"card-text\">\r\n\r\n                        <strong>Category :</strong>\r\n");
             WriteLiteral("                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("TagCategoryName", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63c5a102fe156788b1894741a9bcc143c35725bd6119", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("TagCategoryName", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63c5a102fe156788b1894741a9bcc143c35725bd6330", async() => {
             }
             );
             __FoodMarketingSite_TagHelpers_GetCategoryName = CreateTagHelper<global::FoodMarketingSite.TagHelpers.GetCategoryName>();
@@ -127,7 +134,7 @@ __FoodMarketingSite_TagHelpers_GetCategoryName.FoodId = Model.Id;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                    </p>\r\n                    <a href=\"#\" class=\"btn btn-danger float-right ml-1\">\r\n                        add to Basket\r\n                    </a>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63c5a102fe156788b1894741a9bcc143c35725bd7977", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63c5a102fe156788b1894741a9bcc143c35725bd8188", async() => {
                 WriteLiteral("Back");
             }
             );

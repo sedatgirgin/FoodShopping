@@ -37,6 +37,7 @@ namespace FoodMarketingSite
                     opt.Password.RequiredLength = 1;//1 uzunlulu olsun
                     opt.Password.RequireUppercase = false; //Büyük fark zorunlugunu kaldır
                     opt.Password.RequireNonAlphanumeric = false; //alphanumerik karekterleri  kaldır
+                    
                }).AddEntityFrameworkStores<Context>();
             //Identity kullanımı için eklenmeli
 
@@ -65,7 +66,7 @@ namespace FoodMarketingSite
             services.AddSession();
 
 
-           
+            //app.UseEndpoints için;
             services.AddControllersWithViews();
             services.AddMvc();
 
