@@ -77,7 +77,7 @@ namespace FoodMarketingSite.Controllers
                 //if (signInResult.Result.RequiresTwoFactor)//telefona yada maile gelen mesaj ile giriş
                 if (signInResult.Result.Succeeded)//başarılı ise
                 {
-                    return RedirectToAction("Index", "Home", new { area = "Admin" });
+                    return RedirectToAction("Index", "Home", new { Area = "Admin" });
                 }
                 //    <div asp-validation-summary="ModelOnly" class="text-danger"></div> tag inde hata mesajını yazar
                 ModelState.AddModelError("", "UserName or Password Fail");

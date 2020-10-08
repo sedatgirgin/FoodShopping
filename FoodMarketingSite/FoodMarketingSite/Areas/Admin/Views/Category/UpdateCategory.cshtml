@@ -1,0 +1,29 @@
+﻿@model CategoryModel
+
+<form asp-action="UpdateCategory" asp-controller="Category" asp-area="Admin"  method="post" class="p-4 w-50 mx-auto shadow-lg">
+
+    <input type="hidden" asp-for="@Model.Id" class="form-control" />
+
+    <div class="form-group">
+        <label class="col-form-label"> Category Name</label>
+        <span asp-validation-for="@Model.CategoryName" class="text-danger"></span>
+        <input type="text" asp-for="@Model.CategoryName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label"> Category Description </label>
+        <input type="text" asp-for="@Model.CategoryDescription" class="form-control" />
+    </div>
+    <div class="form-group">
+        <a type="submit" class="btn btn-primary" asp-action="Index" asp-controller="Category" asp-area="Admin"> Back </a>
+        <button type="submit" class="btn btn-warning"> Update </button>
+    </div>
+
+
+</form>
+
+@*validation ların client da da kontrol edilebilmesi için;*@
+
+@section ValidationClientControl{
+    <script src="~/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
