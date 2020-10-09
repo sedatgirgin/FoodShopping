@@ -165,3 +165,4 @@ C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreap
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\AddCategory.cshtml.g.cs
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\UpdateCategory.cshtml.g.cs
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\AssignCategory.cshtml.g.cs

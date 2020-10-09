@@ -117,10 +117,10 @@ namespace FoodMarketingSite
             app.UseEndpoints(endpoint =>
             {
                 //https://localhost:44391/
-                //endpoint.MapControllerRoute(
-                //    name: "default",
-                //    pattern: "{controller=Home}/{action=Index}/{id?}"
-                //    );
+                endpoint.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                    );
 
                 //endpoint.MapAreaControllerRoute(
                 //name: "Admin",
@@ -128,7 +128,7 @@ namespace FoodMarketingSite
                 //pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
                 //);
 
-                //https://localhost:44391/admin
+                ////https://localhost:44391/admin
                 endpoint.MapControllerRoute(
                  name: "area",
                  pattern: "{area}/{controller=Home}/{action=Index}/{id?}"

@@ -33,7 +33,7 @@ namespace FoodMarketingSite.Controllers
             SetCookie("ad", "SEDAT");
             SetSession("soyad", "GİRGİN");
 
-            return View(_foodRepository.TList());
+            return View();
         }
         public IActionResult FoodDetail(int id)
         {
