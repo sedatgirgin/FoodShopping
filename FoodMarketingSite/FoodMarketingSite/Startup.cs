@@ -93,15 +93,19 @@ namespace FoodMarketingSite
 
             //olmayan bir sayfaya girildiğinde {0} ile hata kodunu yakalayabiliriz.
             app.UseStatusCodePagesWithReExecute("/Home/NotFound", "?code={0}");
-
-
-            //olmayan bir sayfa gitildiğinde URL ye 404 hatası verir.
+            //olmayan bir sayfa gitildiğinde URL ye 404 hatası verir. UseStatusCodePagesWithReExecute kullanmak  UseStatusCodePages buna göre daha iyi
             // app.UseStatusCodePages();
+
+
+             
+            //her yere ty-catch yazmak yerine bunu kullanıyoruz. Ç
+            app.UseExceptionHandler("/Error");
+
 
 
             //eklemiş olduğum admin rolündeki kulanıcıyı oluşturuyorum.
             // bir defa oluşturacak daha sonra tekrar oluşturmayacak çünkü artık null degil
-            IdentityInitializer.CreateAdmin(userManager,roleManager);
+           // IdentityInitializer.CreateAdmin(userManager,roleManager);
 
             //ekli bütün dosyaları tarayıcıdan görmemizi sağlar
             app.UseStaticFiles();

@@ -4,9 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using FoodMarketingSite.Data.Models.Login;
 using FoodMarketingSite.Repositories;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using NLog;
 
 namespace FoodMarketingSite.Controllers
 {
@@ -60,7 +62,7 @@ namespace FoodMarketingSite.Controllers
 
         public IActionResult AddToBasket(int id)
         {
-            var food =_foodRepository.TGet(id);
+            var food = _foodRepository.TGet(id);
             _basketRepository.AddToBasket(food);
             TempData["SepetBildirim"] = "Ürün sepete eklendi";
             return RedirectToAction("Index", "Home");
@@ -80,7 +82,7 @@ namespace FoodMarketingSite.Controllers
 
         public IActionResult DeleteBasket(int id)
         {
-           var food = _foodRepository.TGet(id);
+            var food = _foodRepository.TGet(id);
             _basketRepository.ExitFromBasket(food);
             return RedirectToAction("Basket", "Home");
         }
@@ -120,7 +122,7 @@ namespace FoodMarketingSite.Controllers
                 // PasswordSignInAsync(userLoginModel.UserName,userLoginModel.Password,userLoginModel.RememberMe,false)   =>  lockoutOnFailure false ise şifreyi yanlış da girseniz sizi kitlemez.
                 // PasswordSignInAsync(userLoginModel.UserName,userLoginModel.Password,userLoginModel.RememberMe,true)   =>  lockoutOnFailure true ise sizi şifre yanlış ise 5 dakika kitler.
 
-             var signInResult = _signInManager.PasswordSignInAsync(userLoginModel.UserName, userLoginModel.Password, userLoginModel.RememberMe, true);
+                var signInResult = _signInManager.PasswordSignInAsync(userLoginModel.UserName, userLoginModel.Password, userLoginModel.RememberMe, true);
 
                 //if(signInResult.Result.IsLockedOut) // ilgili kullanıcı kilitlimi değil mi?
                 // if(signInResult.Result.IsNotAllowed) // imail - şifre - tel onayı onaylama gibi bir şart varsa buraya düşer?
@@ -139,14 +141,14 @@ namespace FoodMarketingSite.Controllers
 
         //önemli methodlar
         //document.cookie diyerek tarayıcıda görebiliriz
-        public void SetCookie(string key,string value)
+        public void SetCookie(string key, string value)
         {
             HttpContext.Response.Cookies.Append(key, value);
         }
 
         public string GetCookie(string key)
         {
-            HttpContext.Request.Cookies.TryGetValue(key,out string value);
+            HttpContext.Request.Cookies.TryGetValue(key, out string value);
             return value;
         }
 
@@ -169,6 +171,21 @@ namespace FoodMarketingSite.Controllers
         public IActionResult NotFound(int code)
         {
             ViewBag.code = code;
+            return View();
+        }
+
+
+        //Route sayesinde contoler in önemi kalmaz bi hata durumunda direk buraya gelir.
+        [Route("/Error")]
+        public IActionResult Error()
+        {
+            //!!!!!! UYGULAMA HATALARINI NASIL YAKALANIR ? HttpContext içinden yakalanır
+
+            var errorInfo = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
+
+            var logger = LogManager.GetLogger("FileLogger");
+            logger.Log(LogLevel.Error, $"\nHatanın Gerçekleştiği Yer: { errorInfo.Path} \nHata Mesajı: { errorInfo.Error.Message} \nStack Trace: { errorInfo.Error.StackTrace}");
+
             return View();
         }
 

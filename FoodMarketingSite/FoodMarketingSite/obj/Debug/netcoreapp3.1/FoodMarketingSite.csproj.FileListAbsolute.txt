@@ -151,8 +151,6 @@ C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreap
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\FoodMarketingSite.csproj.CoreCompileInputs.cache
-C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\FoodMarketingSite.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
@@ -168,3 +166,8 @@ C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreap
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Views\Home\Basket.cshtml.g.cs
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Views\Home\ThankYou.cshtml.g.cs
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Views\Home\NotFound.cshtml.g.cs
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Views\Home\Error.cshtml.g.cs
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp3.1\NLog.dll
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp3.1\NLog.config
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\FoodMarketingSite.csproj.CoreCompileInputs.cache
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\FoodMarketingSite.MvcApplicationPartsAssemblyInfo.cache
