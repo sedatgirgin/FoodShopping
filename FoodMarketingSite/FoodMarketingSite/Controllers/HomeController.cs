@@ -164,5 +164,13 @@ namespace FoodMarketingSite.Controllers
 
 
 
+
+        //Startup da {0} ile yakaladığımız kod dur.
+        public IActionResult NotFound(int code)
+        {
+            ViewBag.code = code;
+            return View();
+        }
+
     }
 }

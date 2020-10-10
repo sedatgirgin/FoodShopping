@@ -90,10 +90,13 @@ namespace FoodMarketingSite
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
+
+            //olmayan bir sayfaya girildiğinde {0} ile hata kodunu yakalayabiliriz.
+            app.UseStatusCodePagesWithReExecute("/Home/NotFound", "?code={0}");
+
+
+            //olmayan bir sayfa gitildiğinde URL ye 404 hatası verir.
+            // app.UseStatusCodePages();
 
 
             //eklemiş olduğum admin rolündeki kulanıcıyı oluşturuyorum.
