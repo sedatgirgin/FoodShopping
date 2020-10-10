@@ -60,7 +60,6 @@ C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreap
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\bin\Debug\netcoreapp3.1\FoodMarketingSite.Views.pdb
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\FoodMarketingSite.RazorAssemblyInfo.cache
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\FoodMarketingSite.RazorAssemblyInfo.cs
-C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Views\Category\Index.cshtml.g.cs
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\FoodMarketingSite.RazorTargetAssemblyInfo.cs
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\FoodMarketingSite.Views.pdb
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\staticwebassets\FoodMarketingSite.StaticWebAssets.Manifest.cache
@@ -166,3 +165,5 @@ C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreap
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\AddCategory.cshtml.g.cs
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\UpdateCategory.cshtml.g.cs
 C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\AssignCategory.cshtml.g.cs
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Views\Home\Basket.cshtml.g.cs
+C:\Users\serka\WorkSpace\FoodMarketingSite\FoodMarketingSite\obj\Debug\netcoreapp3.1\Razor\Views\Home\ThankYou.cshtml.g.cs

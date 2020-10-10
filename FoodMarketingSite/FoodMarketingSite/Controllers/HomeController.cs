@@ -22,17 +22,20 @@ namespace FoodMarketingSite.Controllers
 
         private readonly IFoodRepository _foodRepository;
 
-        public HomeController(IFoodRepository foodRepository, SignInManager<IdentityUser> signInManager)
+        private readonly IBasketRepository _basketRepository;
+        public HomeController(IFoodRepository foodRepository, SignInManager<IdentityUser> signInManager, IBasketRepository basketRepository)
         {
             _signInManager = signInManager;
             _foodRepository = foodRepository;
+            _basketRepository = basketRepository;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? CategoryId)
         {
             SetCookie("ad", "SEDAT");
             SetSession("soyad", "GİRGİN");
 
+            ViewBag.CategoryId = CategoryId;
             return View();
         }
         public IActionResult FoodDetail(int id)
@@ -43,8 +46,55 @@ namespace FoodMarketingSite.Controllers
             return View(_foodRepository.TGet(id));
         }
 
+
+
+
+
+        /*sepet işlemleri*/
+
+
+        public IActionResult Basket()
+        {
+            return View(_basketRepository.GetAllFoodAtTheBasket());
+        }
+
+        public IActionResult AddToBasket(int id)
+        {
+            var food =_foodRepository.TGet(id);
+            _basketRepository.AddToBasket(food);
+            TempData["SepetBildirim"] = "Ürün sepete eklendi";
+            return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult DeleteAllBasket(decimal toplamAlinan)
+        {
+            _basketRepository.DeleteAllBasket();
+            return RedirectToAction("ThankYou", new { toplamAlinan });
+        }
+
+        public IActionResult ThankYou(decimal fiyatToplam)
+        {
+            ViewBag.Fiyat = fiyatToplam;
+            return View();
+        }
+
+        public IActionResult DeleteBasket(int id)
+        {
+           var food = _foodRepository.TGet(id);
+            _basketRepository.ExitFromBasket(food);
+            return RedirectToAction("Basket", "Home");
+        }
+
+
+        /*sepet işlemleri*/
+
+
+
+
+
+
+
         //cooklie nin gösterdigi login sayfası
-        [HttpGet]
         public IActionResult Login()
         {
             return View(new UserLoginModel());

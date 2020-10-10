@@ -14,8 +14,12 @@ namespace FoodMarketingSite.ViewComponents
         {
             _foodRepository = foodRepository;
         }
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(int? categoryId)
         {
+            if (categoryId.HasValue)
+            {
+                return View(_foodRepository.GetFoodList((int)categoryId));
+            }
             return View(_foodRepository.TList());
         }
     }

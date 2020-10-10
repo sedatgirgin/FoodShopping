@@ -4,13 +4,25 @@
     //Layout = "~/Views/Share/_Layout.cshtml";
 }
 
+@if(TempData["SepetBildirim"] != null)
+{
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Başarılı!!</strong> @TempData["SepetBildirim"].ToString()
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+}
+
+
 <div class="row">
     <div class="col-md-3">
         @await Component.InvokeAsync("CategoryComponent")
 
     </div>
     <div class="col-md-9">
-        @await Component.InvokeAsync("FoodComponent")
+        @*Component new { categoryId = ViewBag.CategoryId } diyerek Invoke methodune arguman geririlebilir. categoryId mehhod da ve burda aynı isimde olmalı*@
+        @await Component.InvokeAsync("FoodComponent", new { categoryId = ViewBag.CategoryId })
     </div>
 </div>
   

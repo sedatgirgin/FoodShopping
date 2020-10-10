@@ -23,8 +23,11 @@
                         <br />
                         @Model.Price
                     </p>
-                    <a href="#" class="btn btn-danger float-right ml-1">
-                        add to Basket
+                    <a asp-action="AddToBasket" 
+                       asp-controller="Home"
+                       asp-route-id="@Model.Id"
+                       class="btn btn-danger float-right ml-1">
+                        Add to Basket
                     </a>
                     <a asp-action="Index" asp-controller="Home"
                        class="btn btn-warning float-right">Back</a>

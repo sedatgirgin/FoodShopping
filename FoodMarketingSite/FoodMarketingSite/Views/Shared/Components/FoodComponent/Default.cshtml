@@ -1,7 +1,8 @@
 ﻿@model List<Food>
 
-    <div class="row">
-
+<div class="row">
+    @if (Model.Count > 0)
+    {
         @foreach (var x in Model)
         {
             <div class="col-md-3 ">
@@ -12,11 +13,19 @@
                         <p class="card-text">@x.Price</p>
                         @*home contoller altındaki FoodDetail e gider Id bilgisini*@
                         <a asp-action="FoodDetail"
-                         asp-controller="Home"
+                           asp-controller="Home"
                            asp-route-id="@x.Id"
                            class="btn btn-primary float-right">Details</a>
                     </div>
                 </div>
             </div>
         }
-     </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center">
+            Kategoriye ait hergangi bir ürün bulunmamatadır.
+        </div>
+    }
+
+</div>

@@ -23,6 +23,8 @@ namespace FoodMarketingSite
             //Identity kullanımı için eklenmeli
             services.AddDbContext<Context>();
 
+            //HttpContext e BasketRepository içinden Controller veya ControllerBase den kalıtmadan erişmek için kullandım. Kullanmaz isen erişemezsin
+            services.AddHttpContextAccessor();
 
             //Authorize işemini kontrol edilebilmesi için UseAuthentication ve UseAuthorization için
             services.AddAuthentication();
@@ -59,6 +61,7 @@ namespace FoodMarketingSite
            services.AddScoped<ICategoryRepository, CategoryRepository>();
            services.AddScoped<IFoodRepository, FoodRepository>();
            services.AddScoped<ICategoryFoodRepository, CategoryFoodRepository>();
+            services.AddScoped<IBasketRepository, BasketRepository>();
 
 
             //session kullanımını aktif etmek için 
@@ -122,17 +125,17 @@ namespace FoodMarketingSite
                     pattern: "{controller=Home}/{action=Index}/{id?}"
                     );
 
-                //endpoint.MapAreaControllerRoute(
-                //name: "Admin",
-                //areaName: "Admin",
-                //pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-                //);
+                endpoint.MapAreaControllerRoute(
+                name: "Admin",
+                areaName: "Admin",
+                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
 
                 ////https://localhost:44391/admin
-                endpoint.MapControllerRoute(
-                 name: "area",
-                 pattern: "{area}/{controller=Home}/{action=Index}/{id?}"
-                 );
+                //endpoint.MapControllerRoute(
+                // name: "area",
+                // pattern: "{area?}/{controller=Home}/{action=Index}/{id?}"
+                // );
             });
 
 
