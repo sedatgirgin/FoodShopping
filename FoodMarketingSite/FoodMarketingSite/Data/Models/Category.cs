@@ -12,7 +12,6 @@ namespace FoodMarketingSite.Data.Models
         [MaxLength(100)]
         public string CategoryName { get; set; }
         public string CategoryDescription { get; set; }
-       
         public List<FoodCategory> FoodCategories { get; set; }
 
     }

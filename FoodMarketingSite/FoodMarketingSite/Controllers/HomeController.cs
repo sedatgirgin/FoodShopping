@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FoodMarketingSite.Data.Models.Login;
 using FoodMarketingSite.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -18,6 +19,7 @@ namespace FoodMarketingSite.Controllers
     /// https://localhost:44391/sedat/Index yazmak gerek çalışması için
     /// </summary>
     //[Route("sedat/[action]")]
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -34,16 +36,16 @@ namespace FoodMarketingSite.Controllers
 
         public IActionResult Index(int? CategoryId)
         {
-            SetCookie("ad", "SEDAT");
-            SetSession("soyad", "GİRGİN");
+            //SetCookie("ad", "SEDAT");
+            //SetSession("soyad", "GİRGİN");
 
             ViewBag.CategoryId = CategoryId;
             return View();
         }
         public IActionResult FoodDetail(int id)
         {
-            ViewBag.Cook = GetCookie("ad");
-            ViewBag.Ses = GetSession("soyad");
+            //ViewBag.Cook = GetCookie("ad");
+            //ViewBag.Ses = GetSession("soyad");
 
             return View(_foodRepository.TGet(id));
         }
@@ -90,12 +92,6 @@ namespace FoodMarketingSite.Controllers
 
         /*sepet işlemleri*/
 
-
-
-
-
-
-
         //cooklie nin gösterdigi login sayfası
         public IActionResult Login()
         {
@@ -141,28 +137,28 @@ namespace FoodMarketingSite.Controllers
 
         //önemli methodlar
         //document.cookie diyerek tarayıcıda görebiliriz
-        public void SetCookie(string key, string value)
-        {
-            HttpContext.Response.Cookies.Append(key, value);
-        }
+        //public void SetCookie(string key, string value)
+        //{
+        //    HttpContext.Response.Cookies.Append(key, value);
+        //}
 
-        public string GetCookie(string key)
-        {
-            HttpContext.Request.Cookies.TryGetValue(key, out string value);
-            return value;
-        }
+        //public string GetCookie(string key)
+        //{
+        //    HttpContext.Request.Cookies.TryGetValue(key, out string value);
+        //    return value;
+        //}
 
-        public void SetSession(string key, string value)
-        {
-            HttpContext.Session.SetString(key, value);
-        }
+        //public void SetSession(string key, string value)
+        //{
+        //    HttpContext.Session.SetString(key, value);
+        //}
 
-        public string GetSession(string key)
-        {
-            string value = HttpContext.Session.GetString(key);
+        //public string GetSession(string key)
+        //{
+        //    string value = HttpContext.Session.GetString(key);
 
-            return value;
-        }
+        //    return value;
+        //}
 
 
 

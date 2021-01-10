@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\serka\\WorkSpace\\FoodMarketingSite\\FoodMarketingSite\\FoodMarketingSite.csproj": {}
+    "C:\\Users\\sedat_girgin\\WorkSpace\\FoodShopping\\FoodMarketingSite\\FoodMarketingSite\\FoodMarketingSite.csproj": {}
   },
   "projects": {
-    "C:\\Users\\serka\\WorkSpace\\FoodMarketingSite\\FoodMarketingSite\\FoodMarketingSite.csproj": {
+    "C:\\Users\\sedat_girgin\\WorkSpace\\FoodShopping\\FoodMarketingSite\\FoodMarketingSite\\FoodMarketingSite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\serka\\WorkSpace\\FoodMarketingSite\\FoodMarketingSite\\FoodMarketingSite.csproj",
+        "projectUniqueName": "C:\\Users\\sedat_girgin\\WorkSpace\\FoodShopping\\FoodMarketingSite\\FoodMarketingSite\\FoodMarketingSite.csproj",
         "projectName": "FoodMarketingSite",
-        "projectPath": "C:\\Users\\serka\\WorkSpace\\FoodMarketingSite\\FoodMarketingSite\\FoodMarketingSite.csproj",
-        "packagesPath": "C:\\Users\\serka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\serka\\WorkSpace\\FoodMarketingSite\\FoodMarketingSite\\obj\\",
+        "projectPath": "C:\\Users\\sedat_girgin\\WorkSpace\\FoodShopping\\FoodMarketingSite\\FoodMarketingSite\\FoodMarketingSite.csproj",
+        "packagesPath": "C:\\Users\\sedat_girgin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sedat_girgin\\WorkSpace\\FoodShopping\\FoodMarketingSite\\FoodMarketingSite\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\serka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sedat_girgin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -40,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
@@ -56,10 +55,6 @@
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.1.8, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.8, )"
             },
@@ -80,6 +75,14 @@
             "NLog.Config": {
               "target": "Package",
               "version": "[4.7.5, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
+              "target": "Package",
+              "version": "[1.1.0, )"
             }
           },
           "imports": [
@@ -100,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

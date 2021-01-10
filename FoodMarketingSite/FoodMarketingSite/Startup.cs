@@ -29,7 +29,6 @@ namespace FoodMarketingSite
             //Authorize işemini kontrol edilebilmesi için UseAuthentication ve UseAuthorization için
             services.AddAuthentication();
 
-
             //userManager => aspnetUsers | roleManager => aspnetrole | signManager
             //ŞİFRE nin özelliklerini belirleyebiliyoruz
             services.AddIdentity<IdentityUser,IdentityRole>(opt=>
@@ -105,7 +104,7 @@ namespace FoodMarketingSite
 
             //eklemiş olduğum admin rolündeki kulanıcıyı oluşturuyorum.
             // bir defa oluşturacak daha sonra tekrar oluşturmayacak çünkü artık null degil
-           // IdentityInitializer.CreateAdmin(userManager,roleManager);
+             // IdentityInitializer.CreateAdmin(userManager,roleManager);
 
             //ekli bütün dosyaları tarayıcıdan görmemizi sağlar
             app.UseStaticFiles();
@@ -126,44 +125,20 @@ namespace FoodMarketingSite
 
             app.UseEndpoints(endpoint =>
             {
-                //https://localhost:44391/
-                endpoint.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}"
-                    );
-
                 endpoint.MapAreaControllerRoute(
                 name: "Admin",
                 areaName: "Admin",
-                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
                 );
 
-                ////https://localhost:44391/admin
-                //endpoint.MapControllerRoute(
-                // name: "area",
-                // pattern: "{area?}/{controller=Home}/{action=Index}/{id?}"
-                // );
+                endpoint.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}"
+                );
+
+           
             });
 
-
-
-
-
-
-            //app.UseMvc(rauters =>
-            //{
-            //    rauters.MapRoute(
-            //          name: "default", template: "{controller=Home}/{action=Index}/{id?}");
-            //});
-
-
-            //sadece int girebilir
-            //app.UseMvc(rauters =>
-            //{
-            //    rauters.MapRoute(
-            //          name: "default", template: "{controller=Home}/{action=Index}/{id:int sadece int veya "alpha" olursa string girebilir sadece}");
-
-            //});
         }
     }
 }

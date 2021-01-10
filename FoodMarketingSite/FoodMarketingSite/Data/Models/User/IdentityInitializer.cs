@@ -15,11 +15,11 @@ namespace FoodMarketingSite.Data.Models.User
             //burda "Async" olmasa "Result" ile işlem bitene kadar arkada başka tired çalıştımaz.
             IdentityUser appUser = new IdentityUser
             {
-                PhoneNumber = "05555555555",
-                Email = "sedatgirgin@gmail.com",
+                PhoneNumber = "05399170935",
+                Email = "sedatgirgin09@gmail.com",
                 UserName = "Yoruk"
             };
-            if (userManager.FindByNameAsync("Yoruk").Result == null)
+            if (userManager.FindByNameAsync("Admin").Result == null)
             {
                 //yoksa böyle bir kullanıcı kendi kullanıcımızı oluşturuyoruz.
                 //password 3 olsun

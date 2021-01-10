@@ -11,7 +11,7 @@ namespace FoodMarketingSite.Data.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-OOIG6GG\\SQLEXPRESS; Database=DbFoodMarketing; Integrated Security=True");
+           optionsBuilder.UseNpgsql("User ID=postgres;Password=Strong2020.;Server=localhost;Port=5432;Database=ShopDb;Integrated Security=true;Pooling=true");
             base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
